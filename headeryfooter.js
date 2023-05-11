@@ -1,22 +1,22 @@
 //INICIO DE BOTONES DEL HEADER
 function backHome(){
-    var backhome = <a href="index,html"></a>
+    var backhome = '<a href= "index.html" link ></a>'
     return backhome
 }
 
 function consultas(){
-    var consultas = <a href="consultas.html"></a>
+    var consultas = '<a href= "consultas.html" link ></a>'
     return consultas
 }
 
 function deportes(){
-    var deportes = <a href="deportes.html"></a>
+    var deportes = '<a href= "deportes.html" link ></a>'
     return deportes
 }
 
 function institucional(){
-    var institucioanl = <a targert="_blank" href="institucioanl.html"></a>
-    return institucioanl
+    var institucional = '<a target="_blank" href= "institucional.html" link ></a>' 
+    return institucional
 }
 
 //FIN DE BOTONES DEL HEADER
@@ -37,17 +37,8 @@ function crearFecha(){
     return fecha
 }
 
-function crearHeader(){
-    var texto = "soy el header"
-    return texto
-}
-
-function mostrarHeader(){
-    document.write(crearHeader())
-}
-//ANTES FUNCIONABA ESTA FUNCTION, PERO POR ALGUNA RÁZON NO ME DEJA ACCEDER AL OBJETO
 function crearFooter(){
-    var texto = `Trabajo realizado por ${this.integrantes} para el sitio ${this.sitio}.`
+    var texto = `Trabajo realizado por ${mifooter.integrantes} para el sitio ${mifooter.sitio}. - ${mifooter.fecha}`
     return texto
 }
 
