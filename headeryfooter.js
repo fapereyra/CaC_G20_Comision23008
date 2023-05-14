@@ -1,24 +1,49 @@
-//INICIO DE BOTONES DEL HEADER
-function backHome(){
-    var backhome = '<a href= "index.html" link ></a>'
-    return backhome
+class Header{
+    constructor(index, deportes, consultas, institucional){
+        this.index = index
+        this.deportes = deportes
+        this.consultas = consultas
+        this.institucional = institucional
+    }
+}
+var miheader = new Header("<a href=index.html>INDEX</a>", "<a href=deportes.html>DEPORTES</a>", "<a href=consultas.html>CONSULTAS</a>", "<a href=institucional.html>INSTITUCIONAL</a>")
+
+//INICIO DE BOTONES DE HEADER//
+//BOTON INDEX//
+function linkIndex(){
+    var link = `${miheader.index}`
+    return link
+}
+function botonIndex(){
+    document.write(linkIndex())
 }
 
-function consultas(){
-    var consultas = '<a href= "consultas.html" link ></a>'
-    return consultas
+//BOTON DEPORTES//
+function linkDeportes(){
+    var link = `${miheader.deportes}`
+    return link
+}
+function botonDeportes(){
+    document.write(linkDeportes())
 }
 
-function deportes(){
-    var deportes = '<a href= "deportes.html" link ></a>'
-    return deportes
+//BOTON CONSULTAS//
+function linkConsultas(){
+    var link = `${miheader.consultas}`
+    return link
+}
+function botonConsultas(){
+    document.write(linkConsultas())
 }
 
-function institucional(){
-    var institucional = `<a href= "institucional.html">INSTITUCIONAL</a>` 
-    return institucional
+//BOTON INSTITUCIONAL//
+function linkInstitucional(){
+    var link = `${miheader.institucional}`
+    return link
 }
-
+function botonInstitucional(){
+    document.write(linkInstitucional())
+}
 //FIN DE BOTONES DEL HEADER
 //INICIO DEL SCRIPT FOOTER
 
