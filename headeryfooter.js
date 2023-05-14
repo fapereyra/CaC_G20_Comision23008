@@ -15,7 +15,7 @@ function deportes(){
 }
 
 function institucional(){
-    var institucional = '<a target="_blank" href= "institucional.html" link ></a>' 
+    var institucional = `<a href= "institucional.html">INSTITUCIONAL</a>` 
     return institucional
 }
 
@@ -30,7 +30,7 @@ class Footer{
     }
 }
 
-var mifooter = new Footer("Francisco pereyra - Hugo Fotunato - David Frias - Fabricio Denuncio", "club social deportivo", crearFecha())
+var mifooter = new Footer("Francisco pereyra - Fabricio Denuncio", "club social deportivo", crearFecha())
 
 function crearFecha(){
     var fecha = new Date()
