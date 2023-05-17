@@ -40,3 +40,9 @@ body{
     background-size:cover;
     background-image:image-set("Img/Fondo.jpg");
 }
+p{
+    width: fit-content;
+    background-color: red;
+    color: white;
+    font-size: xx-large;
+}

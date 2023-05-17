@@ -55,7 +55,7 @@ class Footer{
     }
 }
 
-var mifooter = new Footer("Francisco pereyra - Fabricio Denuncio", "club social deportivo", crearFecha())
+var mifooter = new Footer("Francisco pereyra - Fabricio Denuncio", "club social deportivo Wollff", crearFecha())
 
 function crearFecha(){
     var fecha = new Date()
