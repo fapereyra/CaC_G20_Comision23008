@@ -9,26 +9,38 @@
 
     <link rel="icon" href="img/logo_club.ico">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/headerYFooter.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="js/headerYFooter.js"></script>
 
 </head>
 
 <body style="background-image: url(img/estadio_club.jpg); background-size: 100%">
-    <div style="padding: 12px;">
-        <a href="index.html">Inicio</a>
-        <a href="deportes.html">Deportes y Actividades</a>
-        <a href="institucional.html">Institucional</a>
-        <a href="consultas.html">Consultas</a>
-    </div>
+    <header>
+        <div class="fondo">
+            <div class="header">
+                <script>crearHeader()</script>
+            </div>
+        </div>        
+    </header>
 
     <center>
         <div>
-            <img style="margin-top: -10px;" src="img/logo_club.ico" alt="Logo club deportivo" width="100px">
-            <h1 style="color: black; margin-top: 1px;">¡Bienvenidos al sitio oficial de nuestro Club!</h1>
+            <img src="img/logo_club.ico" alt="Logo club deportivo" width="100px">
+            <h1 style="color: black; margin-top: 1px;">¡Bienvenidos al sitio oficial del Club Social Deportivo Wollff!</h1>
         </div>
     </center>
+
+    <footer>
+        <div class="footer">
+            <script>
+            mostrarFooter()
+            </script>
+        </div>
+    </footer>
 
 </body>
 

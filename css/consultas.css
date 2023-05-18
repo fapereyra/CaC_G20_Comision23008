@@ -1,11 +1,12 @@
-label,
-input {
-    font-size: 15px;
-    /*1.0vw;*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-label {
-    font-style: bold;
+a {
+    text-decoration: none;
 }
 
 input[type=text],
@@ -78,7 +79,7 @@ input[type=submit]:hover {
 .formulario {
     border-radius: 5px;
     border-color: black;
-    background-color: rgb(92, 92, 92);
+    background-color: rgb(65, 65, 65);
     padding: 2%;
     margin: 1% 5%;
     align-self: center;

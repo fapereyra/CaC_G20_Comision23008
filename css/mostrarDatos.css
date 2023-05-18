@@ -17,14 +17,12 @@ h2 {
     width: 70%;
     /* height:20vh; */
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px 15%;
     padding: 0%;
 }
 
 h1 {
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
@@ -32,13 +30,13 @@ h1 {
 
 button {
     width: 160px;
-    border: blue;
+    border: black;
     border-style: solid;
     border-width: 0.4px;
     height: 25px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px;
-    background-color: cyan;
+    background-color: red;
     margin-left: 80%;
     margin-top: 50px;
 }
@@ -48,33 +46,29 @@ button:active {
 }
 
 button:hover {
-    background-color: rgb(20, 136, 136);
+    background-color: darkred;
     color: white;
 }
 
 h2 {
-    background-color: rgb(159, 189, 105);
+    background-color: red;
     border-style: double;
     font-size: large;
     width: 70%;
     /* height:20vh; */
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px 15%;
     padding: 0%;
 }
 
 h1 {
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 table {
-    background-color: rgb(238, 238, 131);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: grey;
 }
 
 body {
-    border-color: green;
-    background-color: rgb(219, 219, 219);
+    border-color: black;
 }

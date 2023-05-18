@@ -9,21 +9,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/deportes.css">
+    <link rel="stylesheet" href="./css/headerYFooter.css">
     <title>Deportes y Actividades</title>
 
     <link rel="icon" href="img/logo_club.ico">
+    <script src="js/headerYFooter.js"></script>
 
 </head>
 
 <body>
-    <div style="padding: 12px; background-color: rgb(92, 92, 92);">
-        <a href="index.html">Inicio</a>
-        <a href="deportes.html">Deportes y Actividades</a>
-        <a href="institucional.html">Institucional</a>
-        <a href="consultas.html">Consultas</a>
-        <br><br>
-        <center><h1 style="color: white;">Nuestros deportes y activades disponibles</h1></center>
-    </div>
+    <header>
+        <div class="fondo">
+            <div class="header">
+                <script>crearHeader()</script>
+            </div>
+        </div>        
+    </header>
+    <br>
+    <center><h1 style="color: white;">Nuestros deportes y activades disponibles</h1></center>
 
     <div id="tarjetasDeportes">
         <div class="card">
@@ -245,6 +248,15 @@
         <div class="laterales" id="ladoDerechoTexto"><img src="./img/logoClubTransparente.png" alt=""></div>
     </div>
 
+    <footer>
+        <!--INICIO FOOTER-->
+        <div class="footer">
+            <script>
+            mostrarFooter()
+            </script>
+        </div>
+    </footer>
+    <!--FIN FOOTER-->
 
     <script src="https://kit.fontawesome.com/9afbaf2f11.js" crossorigin="anonymous"></script>
     <script src="./js/deportes.js"></script>
