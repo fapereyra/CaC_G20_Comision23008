@@ -21,6 +21,17 @@
 
     <script src="js/headerYFooter.js"></script>
 
+    <!-- Boostrap pisaba el estilo de la etiqueta "a" y con esta forma se evita -->
+    <style>
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            color: white;
+        }
+    </style>
+
 </head>
 
 <body class="container-fluid" style="background-color: grey; padding: 0;">
@@ -75,9 +86,10 @@
             </center>
 
             <div class="ubicacion-contenedor">
-                <div style="align-self: center;" class="grid-item"><img src="img/logo_club.ico" alt="Logo club deportivo"></div>
+                <!-- <div style="align-self: center;" class="grid-item"><img src="img/logo_club.ico" alt="Logo club deportivo"></div> -->
+                <div class="grid-item"></div>
                 <div class="gridUbicacFormulario">
-                    <form class="formulario" action="mostrarDatos.html" target="_blank">
+                    <form class="formulario" name="form" action="mostrarDatos.html" target="_blank">
                         <table id="tabla">
                             <tr>
                                 <td class="col1">
@@ -97,7 +109,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="email">Correo Electrónico:</label>
+                                    <label for="email">Correo electrónico:</label>
                                 </td>
                                 <td>
                                     <input type="email" name="email" placeholder="Ingrese su correo electrónico...">
@@ -105,7 +117,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="fNacimiento">Fecha Nacimiento:</label>
+                                    <label for="fNacimiento">Fecha de nacimiento:</label>
                                 </td>
                                 <td>
                                     <input type="date" name="fechaNacimiento">
@@ -139,15 +151,14 @@
                                 </td>
                             </tr>
                         </table>
-                        <input type="submit" value="Enviar">
+                        <input type="submit" id="botonEnviar" value="Enviar">
                     </form>
                 </div>
-                <div style="align-self: center;" class="grid-item"><img src="img/logo_club.ico" alt="Logo club deportivo"></div>
+                <!-- <div style="align-self: center;" class="grid-item"><img src="img/logo_club.ico" alt="Logo club deportivo"></div> -->
+                <div class="grid-item"></div>
             </div>
         </div>
 
-
-    
     </section>
 
     <footer>
@@ -157,6 +168,8 @@
             </script>
         </div>
     </footer>
+
+    <script src="js/validacionForm.js"></script>
 
 </body>
 
