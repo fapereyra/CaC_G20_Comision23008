@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Club Deportivo</title>
+    <title>Club Social Deportivo Wollff</title>
     <link rel="icon" href="img/logo_club.ico">
 
     <link rel="stylesheet" href="css/index.css">
@@ -35,6 +35,15 @@
         </div>
     </center>
 
+    <div>
+        <button onclick="traerDatosAPI()">Consultar temperatura</button>
+    </div>
+
+    <div id="contenido">
+        <!-- Aquí insertaremos contenido que recuperamos
+        mediante la API -->
+    </div>
+
     <footer>
         <div class="footer">
             <script>
@@ -43,6 +52,7 @@
         </div>
     </footer>
 
+    <script src="js/temperaturaApi.js"></script>
 </body>
 
 </html>
