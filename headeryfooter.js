@@ -6,7 +6,7 @@ class Header{
         this.institucional = institucional
     }
 }
-var miheader = new Header("<a href=index.html>INDEX</a>", "<a href=deportes.html>DEPORTES</a>", "<a href=consultas.html>CONSULTAS</a>", "<a href=institucional.html>INSTITUCIONAL</a>")
+var miheader = new Header("<a href=index.html>INICIO</a>", "<a href=deportes.html>DEPORTES</a>", "<a href=consultas.html>CONSULTAS</a>", "<a href=institucional.html>INSTITUCIONAL</a>")
 
 //INICIO DE BOTONES DE HEADER//
 //BOTON INDEX//
@@ -44,6 +44,14 @@ function linkInstitucional(){
 function botonInstitucional(){
     document.write(linkInstitucional())
 }
+
+function crearHeader(){
+    botonIndex()
+    botonDeportes()
+    botonInstitucional()
+    botonConsultas()
+}
+
 //FIN DE BOTONES DEL HEADER
 //INICIO DEL SCRIPT FOOTER
 
@@ -55,7 +63,7 @@ class Footer{
     }
 }
 
-var mifooter = new Footer("Francisco pereyra - Fabricio Denuncio", "club social deportivo Wollff", crearFecha())
+var mifooter = new Footer("Francisco Antonio Pereyra - Fabricio Denuncio", "Club Social Deportivo Wollff", crearFecha())
 
 function crearFecha(){
     var fecha = new Date()
@@ -63,10 +71,11 @@ function crearFecha(){
 }
 
 function crearFooter(){
-    var texto = `Trabajo realizado por ${mifooter.integrantes} para el sitio ${mifooter.sitio}. - ${mifooter.fecha}`
+    var texto = `Pagina realizado por<br> ${mifooter.integrantes} - para el sitio ${mifooter.sitio}.<br> ${mifooter.fecha}`
     return texto
 }
 
 function mostrarFooter(){
     document.write(crearFooter())   
 }
+//FIN SCRIPT FOOTER

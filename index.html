@@ -1,0 +1,62 @@
+<DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Social Deportivo Wollff</title>
+    <link rel="icon" href="img/logo_club.ico">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/headerYFooter.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    
+    <script src="js/headerYFooter.js"></script>
+
+</head>
+
+<body style="background-image: url(img/estadio_club.jpg); background-size: 100%">
+    <div class="contenido">
+    <header>
+        <div class="fondo">
+            <div class="header">
+                <script>crearHeader()</script>
+            </div>
+        </div>        
+    </header>
+    </div>
+
+    <center>
+        <div>
+            <img src="img/logo_club.ico" alt="Logo club deportivo" width="100px">
+            <h1 style="color: black; margin-top: 1px;">¡Bienvenidos al sitio oficial del Club Social Deportivo Wollff!</h1>
+        </div>
+    </center>
+
+    <div>
+        <button onclick="traerDatosAPI()">Consultar temperatura</button>
+    </div>
+
+    <div id="contenido">
+        <!-- Aquí insertaremos contenido que recuperamos
+        mediante la API -->
+    </div>
+
+    <div class="contenido">
+    <footer>
+        <div class="footer">
+            <script>
+            mostrarFooter()
+            </script>
+        </div>
+    </footer>
+    </div>
+
+    <script src="js/temperaturaApi.js"></script>
+</body>
+
+</html>
