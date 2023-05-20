@@ -1,6 +1,6 @@
 var formulario = document.getElementsByName('form')[0]
-var elementos = formulario.elements
-var boton = document.getElementById('botonEnviar')
+var elementos = formulario.elements  // no se usa
+var boton = document.getElementById('botonEnviar')  // no se usa
 
 
 var validarApellido = function (e) {
@@ -18,7 +18,9 @@ var validarNombre = function (e) {
 };
 
 var validarCorreo = function (e) {
-    if (formulario.email.value == 0 || !(formulario.email.value).includes("@") || !(formulario.email.value).includes(".")) {
+    if (formulario.email.value == 0 ||
+        !(formulario.email.value).includes("@") ||
+        !(formulario.email.value).includes(".")) {
         alert("Completa el campo correo electronico")
         e.preventDefault()
     }
