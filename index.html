@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/headerYFooter.css">
+    <link rel="stylesheet" href="css/apiPokemon.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,15 +35,15 @@
             <h1 style="color: black; margin-top: 1px;">¡Bienvenidos al sitio oficial del Club Social Deportivo Wollff!</h1>
         </div>
     </center>
+    <br>
 
-    <div>
-        <button onclick="traerDatosAPI()">Consultar API</button>
-    </div>
 
-    <div id="contenido">
-        <!-- Aquí insertaremos contenido que recuperamos
-        mediante la API -->
+    
+    <div class="cajadebusqueda">
+        <input style="width: 245px;" id="idPokemon" type="text" placeholder="Ingrese un id de pokemon entre 1 y 1010">
+        <button id="buscar">Buscar</button>
     </div>
+    <div class="cuadroPokemon"></div>
 
     <footer>
         <div class="footer">
@@ -52,7 +53,7 @@
         </div>
     </footer>
 
-    <script src="js/temperaturaApi.js"></script>
+    <script src="js/apiPokemon.js"></script>
 </body>
 
 </html>
