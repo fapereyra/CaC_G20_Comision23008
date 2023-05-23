@@ -71,7 +71,7 @@ function crearFecha(){
 }
 
 function crearFooter(){
-    var texto = `Pagina realizado por<br> ${mifooter.integrantes} - para el sitio ${mifooter.sitio}.<br> ${mifooter.fecha}`
+    var texto = `Página realizada por<br> ${mifooter.integrantes} - para el sitio ${mifooter.sitio}.<br> ${mifooter.fecha}`
     return texto
 }
 
