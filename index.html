@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Social Deportivo Wollff</title>
+    <link rel="icon" href="img/logo_club.ico">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/headerYFooter.css">
+    <link rel="stylesheet" href="css/apiPokemon.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    
+    <script src="js/headerYFooter.js"></script>
+
+</head>
+
+<body style="background-image: url(img/estadio_club.jpg); background-size: 100%">
+    <header>
+        <div class="fondo contenido">
+            <div class="header">
+                <script>crearHeader()</script>
+            </div>
+        </div>        
+    </header>
+
+    <center>
+        <div>
+            <img src="img/logo_club.ico" alt="Logo club deportivo" width="100px">
+            <h1 style="color: black; margin-top: 1px;">¡Bienvenidos al sitio oficial del Club Social Deportivo Wollff!</h1>
+        </div>
+    </center>
+    <br>
+
+
+    
+    <div class="cajadebusqueda">
+        <input style="width: 245px;" id="idPokemon" type="text" placeholder="Ingrese un id de pokemon entre 1 y 1010">
+        <button id="buscar">Buscar</button>
+    </div>
+    <div class="cuadroPokemon"></div>
+
+    <footer>
+        <div class="footer">
+            <script>
+            mostrarFooter()
+            </script>
+        </div>
+    </footer>
+
+    <script src="js/apiPokemon.js"></script>
+</body>
+
+</html>
