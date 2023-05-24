@@ -8,14 +8,14 @@ var validarApellido = function (e) {
         alert("Completa el campo apellido")
         e.preventDefault()
     }
-};
+}
 
 var validarNombre = function (e) {
     if (formulario.nombre.value == 0) {
         alert("Completa el campo nombre")
         e.preventDefault()
     }
-};
+}
 
 var validarCorreo = function (e) {
     if (formulario.email.value == 0 ||
@@ -24,14 +24,14 @@ var validarCorreo = function (e) {
         alert("Completa el campo correo electronico")
         e.preventDefault()
     }
-};
+}
 
 var validarFechaDeNacimiento = function (e) {
     if (formulario.fechaNacimiento.value == 0) {
         alert("Completa el campo fecha de nacimiento")
         e.preventDefault()
     }
-};
+}
 
 var validarSexo = function (e) {
     if (formulario.sexo[0].checked == true ||
@@ -40,7 +40,7 @@ var validarSexo = function (e) {
         alert("Selecciona un sexo")
         e.preventDefault()
     }
-};
+}
 
 
 var validarConocimiento = function (e) {
@@ -52,14 +52,14 @@ var validarConocimiento = function (e) {
         alert("Selecciona alguna opcion de sobre como nos conoce");
         e.preventDefault();
     }
-};
+}
 
 var validarConsulta = function (e) {
     if (formulario.consulta.value == 0) {
         alert("Completa el campo consulta")
         e.preventDefault()
     }
-};
+}
 
 
 var validarForm = function (e) {
@@ -70,6 +70,6 @@ var validarForm = function (e) {
     validarSexo(e)
     validarConocimiento(e)
     validarConsulta(e)
-};
+}
 
 formulario.addEventListener("submit", validarForm)

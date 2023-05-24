@@ -6,7 +6,7 @@ class Header{
         this.institucional = institucional
     }
 }
-var miheader = new Header("<a href=index.html>INDEX</a>", "<a href=deportes.html>DEPORTES</a>", "<a href=consultas.html>CONSULTAS</a>", "<a href=institucional.html>INSTITUCIONAL</a>")
+var miheader = new Header("<a href=index.html>INICIO</a>", "<a href=deportes.html>DEPORTES</a>", "<a href=consultas.html>CONSULTAS</a>", "<a href=institucional.html>INSTITUCIONAL</a>")
 
 //INICIO DE BOTONES DE HEADER//
 //BOTON INDEX//
@@ -41,6 +41,7 @@ function linkInstitucional(){
     var link = `${miheader.institucional}`
     return link
 }
+
 function botonInstitucional(){
     document.write(linkInstitucional())
 }
