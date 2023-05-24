@@ -12,3 +12,70 @@ a {
     color: white;
     text-decoration: none;
 }
+
+body {
+    background-color: rgb(92, 92, 92);
+}
+
+.nombre {
+    text-decoration: underline;
+    font-size:xx-large;
+}
+
+.p0 {
+    font-style: italic;
+    font-size: large;
+}
+
+.p1 {
+    font-size: medium;
+    font-style: oblique;
+}
+
+.p2 {
+    font-size: large;
+    text-decoration: double;
+    text-decoration-color: white;
+}
+
+.cuadroPokemon {
+    margin: 20%;
+    margin-top: 1%;
+}
+
+.infoPokemon, .boton, .novedad {
+    border-style: groove;
+    border-radius: 4px;
+    border-color:red;
+    margin: auto;
+    padding: 5px;
+    background-color: black;
+    color:white;
+}
+
+.boton:hover {
+    border-color: black;
+    background-color: red;
+    color: black;
+}
+
+.experiencia, .aclaracion {
+    border-style: groove;
+    border-radius: 4px;
+    border-color:black;
+    margin: auto;
+    padding: 8px;
+    background-color:red;
+    color:white;
+}
+
+.habilidades {
+    border-style:double;
+    border-radius: 4px;
+    border-color:white;
+    margin: auto;
+    padding: 10px;
+    background-color: black;
+    color:red;
+}
+

@@ -12,10 +12,8 @@ a {
 input[type=text],
 input[type=date],
 input[type=email],
-/* input[type=textArea], */
 select {
     width: 95%;
-    /*80 se ve bien en celulares 100 en desktop*/
     padding: 1vw;
     margin: 1vw;
     display: inline-block;
@@ -25,7 +23,6 @@ select {
 
 }
 
-/* input[type=textArea]{ */
 textarea {
     height: 200px;
     min-height: 100px;
@@ -63,10 +60,10 @@ input[type=submit] {
     background-color: red;
     padding: 14px 20px;
     margin: 8px 6px;
-    /* border: none; */
     border-radius: 5px;
     border-color: black;
     cursor: pointer;
+    color: white;
 }
 
 input[type=submit]:hover {
@@ -91,9 +88,6 @@ input[type=submit]:hover {
 table {
     border-color: black;
     width: 100%;
-    /* height: 300px; */
-
-    /* background-color: black; */
 
 }
 
