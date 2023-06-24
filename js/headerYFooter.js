@@ -64,7 +64,7 @@ class Footer{
     }
 }
 
-var mifooter = new Footer("Francisco Antonio Pereyra - Fabricio Denuncio", "Club Social Deportivo Wollff", crearFecha())
+var mifooter = new Footer("Francisco Antonio Pereyra - Fabricio Denuncio - Nicolas Salvadores - Carolina Podesta", "Club Social Deportivo Wollff", crearFecha())
 
 function crearFecha(){
     var fecha = new Date()
@@ -72,7 +72,10 @@ function crearFecha(){
 }
 
 function crearFooter(){
-    var texto = `Página realizada por<br> ${mifooter.integrantes} - para el sitio ${mifooter.sitio}.<br> ${mifooter.fecha}`
+    var texto = `<span><a href="www.facebook.com" class="fa fa-facebook" id="fb"></a></span>
+                 <span><a href="www.instagram.com" class="fa fa-instagram" id="ig"></a></span>
+                 <span><a href="www.twitter.com" class="fa fa-twitter" id="twt"></a></span><br>
+                 Página realizada por: ${mifooter.integrantes}.<br> ${mifooter.fecha}`
     return texto
 }
 
