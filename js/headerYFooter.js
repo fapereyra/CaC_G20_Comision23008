@@ -6,7 +6,7 @@ class Header{
         this.institucional = institucional
     }
 }
-var miheader = new Header("<a href=index.html>INICIO</a>", "<a href=deportes.html>DEPORTES</a>", "<a href=consultas.html>CONSULTAS</a>", "<a href=institucional.html>INSTITUCIONAL</a>")
+var miheader = new Header("<a href=index.html class='header-item'>INICIO</a>", "<a href=deportes.html class='header-item'>DEPORTES</a>", "<a href=consultas.html  class='header-item'>CONSULTAS</a>", "<a href=institucional.html class='header-item'>INSTITUCIONAL</a>")
 
 //INICIO DE BOTONES DE HEADER//
 //BOTON INDEX//

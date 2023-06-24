@@ -3,14 +3,14 @@
 }
 
 .fondo {
-    background-color: red;
+    background-color: #CD1818;
     border-radius: 4px;
     height: 65px;
     width: 100%;
 }
 
 .header {
-    background-color: black;
+    background-color: #321E1E;
     border-radius: 4px;
     height: 35px;
     width: 75%;
@@ -19,19 +19,22 @@
     box-sizing: content-box;
 }
 
-a {
-    background-color: rgb(61, 55, 55);
+.header-item{
+    background-color: #4E3636;
     border-radius: 4px;
     margin-left: 12%;
     padding: 4px;
-    color: white;
+    color: #F9DBBB;
     text-decoration: none;
-
+    font-weight: bold;
 }
 
-body {
-    background-color: rgb(92, 92, 92);
+.header-item:hover{
+    background-color: #950101;
 }
+ a{
+    background-color: #321E1E; 
+ }
 footer {
     background-color: rgb(61, 55, 55);
     display: flex;
@@ -46,8 +49,8 @@ footer {
 .footer {
     justify-content: center;
     padding: 0;
-    background-color: rgb(61, 55, 55);
-    color: crimson;
+    background-color: #321E1E;
+    color: #F9DBBB;
     font-size: large;
     width: 100%;
     display: inline;
@@ -72,11 +75,6 @@ footer {
 
 #fb:hover{
     transform:rotate(360deg);
-    /* animation-name: facebook;
-	animation-duration: 2s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in; */
     animation: facebook 2s alternate 0s infinite ease-in;
 }
 @keyframes facebook {
