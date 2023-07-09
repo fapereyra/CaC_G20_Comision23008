@@ -22,7 +22,7 @@ def create_table():
             tel int(12) NOT NULL,
             direccylocalidad varchar(50) NOT NULL,
             PRIMARY KEY (dni)
-        )
+        );
     ''')
 
     cursor.execute('''
@@ -31,11 +31,11 @@ def create_table():
             nombre varchar (30) NOT NULL,
             arancel int (5) NOT NULL,
             PRIMARY KEY (`id_d`)
-        )
+        );
     ''')
 
     cursor.execute('''
-        INSERT INTO deportes VALUES (
+        INSERT INTO deportes VALUES 
             (1, "Crossfit", 5600),
             (2, "Atletismo", 5400),
             (3, "Futbol", 6200),
@@ -49,19 +49,19 @@ def create_table():
             (11, "Tenis", 6100),
             (12, "Box Recreativo", 5800),
             (13, "Gimnasia Artistica", 6200),
-            (14, "Ajedrez", 4500)
-        )
+            (14, "Ajedrez", 4500);
     ''')
 
+# id <date type> NOT NULL PRIMARY KEY AUTOINCREMENT;
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS inscripciones (
-            id int (4) NOT NULL,
+            id int (4) NOT NULL AUTOINCREMENT,
             dni_socio int (4) NOT NULL,
             id_deporte int (4) NOT NULL,
             PRIMARY KEY (`id`),
             FOREIGN KEY (`dni_socio`) REFERENCES socios (`dni`),
             FOREIGN KEY (`id_deporte`) REFERENCES deportes (`id_d`)
-        )
+        );
     ''')
 
     conn.commit()

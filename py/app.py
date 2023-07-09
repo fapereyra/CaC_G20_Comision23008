@@ -3,6 +3,16 @@ from flask_cors import CORS
 from tablas import create_database
 from objetos import InscripcionADeporte, AdministracionDeSocios
 
+# from flask import Flask, render_template, request, redirect, url_for
+# import os
+# import database as db
+# 
+# template_dir = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
+# template_dir = os.path.join(template_dir, 'Pagina', 'templates')
+# 
+# app = Flask(__name__, template_folder = template_dir)
+
+
 # Crear la base de datos y la/s tabla/s si no existen
 create_database()
 
