@@ -64,7 +64,7 @@ class Footer{
     }
 }
 
-var mifooter = new Footer("Francisco Antonio Pereyra - Fabricio Denuncio - Nicolas Salvadores - Carolina Podesta", "Club Social Deportivo Wollff", crearFecha())
+var mifooter = new Footer("Francisco Antonio Pereyra - Fabricio Denuncio - Nicolas Salvadores", "Club Social Deportivo Wollff", crearFecha())
 
 function crearFecha(){
     var fecha = new Date()

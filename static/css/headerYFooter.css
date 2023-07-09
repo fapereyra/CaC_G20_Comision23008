@@ -33,15 +33,15 @@
     background-color: #950101;
 }
 
-a{
-    background-color: #321E1E;
-    margin-left:16%; 
- }
+.nav-item{
+    font-weight: bold;
+    letter-spacing: 0.1vw;
+}
 footer {
     background-color: rgb(61, 55, 55);
     display: flex;
-    overflow: hidden;
     position: absolute;
+    margin-top: 1rem;
     bottom: 0;
     width: 100%;
 }
@@ -63,13 +63,16 @@ footer {
 }
 
 .fa {
-    padding: 1rem;
+   
     font-size: 2rem !important;
     width: 1.5rem;
     text-align: center;
     text-decoration: none;
     border-radius: 50%;
     color: azure;
+    background-color: #321E1E;
+    margin-left:16%; 
+    padding-top: 0.5rem;
   }
 
 #fb{

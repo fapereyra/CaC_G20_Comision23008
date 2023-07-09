@@ -1,6 +1,6 @@
 import sqlite3
 import os
-from flask import Flask, jsonify, request, render_template, url_for
+from flask import Flask, jsonify, request, render_template, url_for, redirect
 from flask_cors import CORS
 from formulario import FormularioInscripcion
 from flask_bootstrap import Bootstrap4
@@ -232,7 +232,7 @@ app.config['SECRET_KEY'] = SECRET_KEY
 inscripcion = InscripcionADeporte()         # Instanciamos una inscripcion
 administracion = AdministracionDeSocios()   # Instanciamos una administracion
 
-@app.route('/', methods=["GET"])
+@app.route('/', methods=["GET", "POST"])
 def index():
     return render_template("index.html")
 
@@ -316,12 +316,15 @@ def obtener_inscripciones():
 @app.route('/formulario', methods=["GET", "POST"])
 def formulario_socio():
     form = FormularioInscripcion()
-    if form.validate_on_submit():
-        form_data = request.form
-        # send_email(form_data['name'], form_data['email'], form_data['message'], type='contact')
-        # return render_template('contact.html', title='Gracias por ponerte en contacto!',
-        #                        subtitle='Tendras tu respuesta muy rapido', form=form)
-    return render_template("formulario.html", title=False, form=form)
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            form_data = request.form
+            return redirect(url_for("formulario_exitoso"))
+    return render_template("formulario.html", form=form)
+
+@app.route('/formulario_exitoso', methods=["GET", "POST"])
+def formulario_exitoso():
+    return render_template("formulario_exitoso.html")
 
 # Finalmente, si estamos ejecutando este archivo, lanzamos app.
 if __name__ == '__main__':

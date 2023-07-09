@@ -3,18 +3,20 @@
     font-family: 'Roboto', sans-serif;
 }
 
-a {
-    background-color: rgb(0, 0, 0);
-    border-radius: 4px;
-    padding: 4px;
-    color: white;
-    text-decoration: none;
-}
-
 body {
     background-color: #3D0000;
-    overflow: hidden
+    overflow-x: hidden;
 }
+
+#contenedor-pagina{
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 6.2rem;
+  }
+
 h1{
     font-size: 3rem;
     color: #F9DBBB;
@@ -90,3 +92,22 @@ h2{
     color:red;
 }
 
+.formulario{
+    background-color: #4E3636;
+}
+
+form{
+    background-color: rgb(24, 22, 22) !important;
+    color: beige !important;
+    font-weight: bold !important;
+}
+
+.opciones{
+    background-color: #3D0000;
+    color: #F9DBBB;
+    font-size: 1.5rem;
+}
+
+.opciones p a:hover{
+    background-color: #8f8585;
+}
