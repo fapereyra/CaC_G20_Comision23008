@@ -1,13 +1,17 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, DateField, IntegerField, PasswordField
+from wtforms import StringField, SubmitField, DateField, IntegerField, RadioField
 from wtforms.validators import InputRequired, Length, Email, NumberRange
+from wtforms.widgets import html_params
 
-class ContactForm(FlaskForm):
-    nombre = StringField('Nombre', validators=[InputRequired(), Length(min=2, max=20)])
-    apellido = StringField('Apellido', validators=[InputRequired(), Length(min=2, max=20)])
-    edad = IntegerField('Edad', validators=[InputRequired(),NumberRange(min=1, max=110, message='Introdice una edad valida') ])
-    nacimiento = DateField('Fecha de Nacimiento', validators =[InputRequired()])
-    contrasena = PasswordField('Contrasena', validators=[InputRequired(), Length(min=4, max=32)])
-    email = StringField('Email', validators=[InputRequired(), Length(min=6, max=50), Email()])
+class FormularioInscripcion(FlaskForm):
+    dni = IntegerField('DNI:', validators=[InputRequired(),NumberRange(min=1, max=99999999, message='Introduce una edad valida') ])
+    nombreyapellido = StringField('Nombre:', validators=[InputRequired(), Length(min=2, max=50)])
+    email = StringField('Email:', validators=[InputRequired(), Length(min=6, max=50), Email()])
+    sexo = RadioField('Genero:', choices=[('hombre','Hombre'), ('mujer','Mujer'), ('otro', 'Otro')], validators=[InputRequired(), Length(min=2, max=20)])
+    nacimiento = DateField('Fecha de Nacimiento:', validators =[InputRequired()])
+    edad = IntegerField('Edad:', validators=[InputRequired(),NumberRange(min=1, max=110, message='Introduce una edad valida') ])
+    
+    
+    
     telefono = IntegerField('Telefono', validators=[InputRequired(),NumberRange(min=1, max=110, message='Introduce correctamente, Ej: 1138383833') ])
     submit = SubmitField('Enviar')

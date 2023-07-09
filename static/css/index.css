@@ -13,11 +13,13 @@ a {
 
 body {
     background-color: #3D0000;
+    overflow: hidden
 }
 h1{
     font-size: 3rem;
     color: #F9DBBB;
     padding-bottom: 3rem;
+    font-family: Bebas Neue, sans-serif;
 }
 h2{
     font-size: 2rem;
