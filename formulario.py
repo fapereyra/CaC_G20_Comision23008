@@ -8,7 +8,7 @@ class FormularioInscripcion(FlaskForm):
     nombreyapellido = StringField('Nombre y Apellido:', validators=[InputRequired(), Length(min=2, max=50)])
     email = StringField('Email:', validators=[InputRequired(), Length(min=6, max=50), Email()])
     sexo = RadioField('Genero:', choices=[('hombre','Hombre'), ('mujer','Mujer'), ('otro', 'Otro')], validators=[InputRequired(), Length(min=2, max=20)])
-    nacimiento = DateField('Fecha de Nacimiento:', validators =[InputRequired()])
+    fechanacimiento = DateField('Fecha de Nacimiento:', validators =[InputRequired()])
     edad = IntegerField('Edad:', validators=[InputRequired(),NumberRange(min=1, max=110, message='Introduce una edad valida') ])
     
     

@@ -267,13 +267,14 @@ def obtener_socios():
     return administracion.listar_socios()
 
 # Ruta para dar de alta un socio
-@app.route('/socios', methods=['POST'])
-def dar_alta_socio():
-    dni = request.json.get('dni')
-    nombreyapellido = request.json.get('nombreyapellido')
-    sexo = request.json.get('sexo')
-    fechanacimiento = request.json.get('fechanacimieno')
-    return administracion.dar_alta_socio(dni, nombreyapellido, sexo, fechanacimiento)
+# COMENTE ESTO PORQUE YA YA FUNCION fomulario_socio hace esto!!!
+# @app.route('/socios', methods=['POST'])
+# def dar_alta_socio():
+#     dni = request.json.get('dni')
+#     nombreyapellido = request.json.get('nombreyapellido')
+#     sexo = request.json.get('sexo')
+#     fechanacimiento = request.json.get('fechanacimieno')
+#     return administracion.dar_alta_socio(dni, nombreyapellido, sexo, fechanacimiento)
 
 # Ruta para modificar la informacion de un socio -- CREO QUE ESTO QUEDARÍA SIN EFECTO --
 @app.route('/socios/<int:codigo>', methods=['PUT'])
@@ -313,12 +314,17 @@ def obtener_inscripciones():
 # def obtener_socios():
 #     return administracion.listar_socios()
 
-@app.route('/formulario', methods=["GET", "POST"])
+@app.route('/crear_socio', methods=["GET", "POST"])
 def formulario_socio():
     form = FormularioInscripcion()
     if request.method == 'POST':
         if form.validate_on_submit():
-            form_data = request.form
+            dni = form.dni.data
+            nombreyapellido = form.nombreyapellido.data
+            sexo = form.sexo.data
+            fechanacimiento = form.fechanacimiento.data
+            print(dni, nombreyapellido, sexo, fechanacimiento)
+            # administracion.dar_alta_socio(dni, nombreyapellido, sexo, fechanacimiento)
             return redirect(url_for("formulario_exitoso"))
     return render_template("formulario.html", form=form)
 

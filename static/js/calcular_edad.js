@@ -1,5 +1,5 @@
 function calculateAge() {
-    var fechaNacimiento = document.getElementById('nacimiento').value;
+    var fechaNacimiento = document.getElementById('fechanacimiento').value;
     var hoy = new Date();
     var fechaNacimiento = new Date(fechaNacimiento);
     var edad = hoy.getFullYear() - fechaNacimiento.getFullYear();

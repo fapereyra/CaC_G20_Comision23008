@@ -1,36 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Institucional</title>
-    <link rel="icon" href="img/logo_club.ico">
-
-    <link rel="stylesheet" href="css/institucional.css">
-    <link rel="stylesheet" href="css/headerYFooter.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
-    <script src="js/headerYFooter.js"></script>
-</head>
-
-<body style="margin: 0">
-    <header>
-        <div class="fondo contenido">
-            <div class="header">
-                <script>crearHeader()</script>
-            </div>
-        </div>
-    </header>
+{% extends "layout.html" %}
+{%block head %}
+{{super()}}
+<link rel="stylesheet" href={{url_for('static', filename='css/institucional.css')}}>
+{%endblock%}
+{% block title %}Institucional{% endblock %}
+{% block content %}
 
     <center>
-        <h1 class="quienesSomos"><img src="img/logo_club.ico" alt="Logo club deportivo" width="40px">¿Quienes somos?<img
-                src="img/logo_club.ico" alt="Logo club deportivo" width="40px"></h1>
-    </center>
+        <h1 class="quienesSomos"><img src={{url_for('static', filename='img/logo_club.ico')}} alt="Logo club deportivo" width="40px">¿Quienes somos?</h1>
+    
     <p class="quienesSomos">Somos un club que promueve toda actividad deportiva. Nos gusta jugar y competir, entendemos
         que es lo más importante. Ganar es una consecuencia de lo anterior, no un objetivo a cumplir.
         En nuestros espacios recibimos a toda persona que quiera jugar y competir en cualquiera de nuestras actividades.
@@ -42,6 +20,7 @@
         Recibimos a todos los que quieran sumarse a nuestra visión, y anticipamos que mientras más seamos, más crecemos.
         Así que sumate que si o si vamos tener a crear un lugar para que puedas jugar.
     </p>
+</center>
     <center>
         <h2 class="quienesSomos">Estamos aquí</h2>
         <span>
@@ -53,13 +32,4 @@
     </center>
     <br>
 
-    <footer>
-        <div class="footer">
-            <script>
-                mostrarFooter()
-            </script>
-        </div>
-    </footer>
-</body>
-
-</html>
+{%endblock%}

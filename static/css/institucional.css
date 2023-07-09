@@ -1,7 +1,7 @@
 .quienesSomos {
-    width: fit-content;
+    width: 90%;
     border-radius: 4px;
     padding: 4px;
-    background-color: red;
+    background-color: #191A19;
     color: white;
 }
