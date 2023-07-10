@@ -1,11 +1,12 @@
 {% extends "layout.html" %}
-{%block header%}
+{%block head%}
+{{super()}}
 <link rel="stylesheet" href={{url_for('static', filename='css/consultas.css')}}> 
 {%endblock%}
-{% block title %}C.S.D.W.{% endblock %}
+{% block title %}Consultas{% endblock %}
 {% block content %}
 
-<section id="principal " class="d-md-flex">
+<section id="principal " class="d-md-flex mx-auto">
 
     <div id="sector_central "
         class="h-100 col-sm-12 col-md-12 col-lg-12 m-0 justify-content-center align-items-center ">
@@ -14,10 +15,10 @@
         </center>
 
         <div class="ubicacion-contenedor">
-            <div class="grid-item"></div>
-            <div class="gridUbicacFormulario">
-                <form class="formulario" name="form" action="mostrarDatos.html">
-                    <table id="tabla">
+            
+            <div class="gridUbicacFormulario ">
+                <form class="formulario w-50 mx-auto" name="form" action="mostrarDatos.html" class="mx-auto">
+                    <table id="tabla" class="mx-auto">
                         <tr>
                             <td class="col1">
                                 <label for="apellido">Apellido:</label>
@@ -42,7 +43,7 @@
                                 <input type="email" name="email" placeholder="Ingrese su correo electrónico...">
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>
                                 <label for="fNacimiento">Fecha de nacimiento:</label>
                             </td>
@@ -56,7 +57,7 @@
                                 <input type="radio" name="sexo" value="Hombre"> Hombre
                                 <input type="radio" name="sexo" value="Mujer"> Mujer
                             </td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td style="color: white;">¿Cómo nos conoce?</td>
                             <td>
@@ -76,11 +77,18 @@
                                     placeholder="Ingrese aquí su consulta..."></textarea>
                             </td>
                         </tr>
+                        <tr>
+                            <td> </td>
+                            <td>
+                                <div class="w-25">
+                                <input type="submit" class="btn btn-primary" value="Enviar">
+                                </div>
+                            </td>
+                        </tr>
                     </table>
-                    <input type="submit" id="botonEnviar" value="Enviar">
+                    
                 </form>
             </div>
-            <div class="grid-item"></div>
         </div>
     </div>
 </section>
