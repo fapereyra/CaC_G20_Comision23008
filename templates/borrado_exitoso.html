@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 
-{% block title %}Socio agragado corectamente!{% endblock %}
+{% block title %}Socio borrado corectamente!{% endblock %}
 {% block content %}
 <div class="container mx-auto">
-    <h1>Socio adherido correctamente!</h1>
+    <h1><strong>Socio borrado correctamente!</strong></h1>
     <br>
     <div class="opciones d-flex w-50">
-    <p >Adherir otro usuario</p><span><a href="{{url_for("formulario_socio")}}">➕</a></span>
+    <p >Borrar otro usuario</p><span><a href="{{url_for("borrar_socio")}}">❌</a></span>
     </div>
     <br>
     <div class="opciones d-flex w-50 ">

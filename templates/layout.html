@@ -48,10 +48,10 @@
                               Socios
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <li><a class="dropdown-item" href="#">Ver socios</a></li>
+                              <li><a class="dropdown-item" href="{{url_for('obtener_socios')}}">Ver socios</a></li>
                               <li><a class="dropdown-item" href="{{url_for('formulario_socio')}}">Agregar socios</a></li>
-                              <li><a class="dropdown-item" href="#">Modificar socio</a></li>
-                              <li><a class="dropdown-item" href="#">Eliminar socio</a></li>
+                              <li><a class="dropdown-item" href="{{url_for('borrar_socio')}}">Modificar socio</a></li>
+                              <li><a class="dropdown-item" href="{{url_for('borrar_socio')}}">Eliminar socio</a></li>
                             </ul>
                           </li>
                           <li class="nav-item">

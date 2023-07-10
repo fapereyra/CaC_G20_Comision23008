@@ -96,7 +96,7 @@ h2{
     background-color: #4E3636;
 }
 
-form{
+.agregar_socio{
     background-color: rgb(24, 22, 22) !important;
     color: beige !important;
     font-weight: bold !important;
@@ -110,4 +110,8 @@ form{
 
 .opciones p a:hover{
     background-color: #8f8585;
+}
+
+.msj_error{
+    background-color: #F9DBBB;
 }

@@ -9,7 +9,7 @@ from flask_bootstrap import Bootstrap4
 DATABASE = 'administracion.db'
 
 def get_db_connection():
-    conn = sqlite3.connect(DATABASE)
+    conn = sqlite3.connect(DATABASE, check_same_thread=False)
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -50,7 +50,7 @@ def create_table():
 
 # Verificar si la base de datos existe, si no, crearla y crear la/s tabla/s
 def create_database():
-    conn = sqlite3.connect(DATABASE)
+    conn = sqlite3.connect(DATABASE, check_same_thread=False)
     conn.close()
     create_table()
 
@@ -67,6 +67,7 @@ class Socio:
         self.nombreyapellido = nombreyapellido
         self.sexo = sexo
         self.fechanacimiento = fechanacimiento
+
 
     def modificar(self, n_nombreyapellido, n_sexo, n_fechanacimiento):
         self.nombreyapellido = n_nombreyapellido
@@ -146,13 +147,15 @@ class AdministracionDeSocios:
         return jsonify(socios), 200
 
     def dar_baja_socio(self, dni):
-        InscripcionADeporte.desincribir_todos_los_deportes(dni)
+        # InscripcionADeporte.desincribir_todos_los_deportes(dni)
 
         self.cursor.execute("DELETE FROM socios WHERE dni = ?", (dni,))
         if self.cursor.rowcount > 0:
             self.conexion.commit()
-            return jsonify({'message': 'Socio dado de baja correctamente.'}), 200
-        return jsonify({'message': 'Socio no encontrado.'}), 404
+            # return jsonify({'message': 'Socio dado de baja correctamente.'}), 200
+            return True
+        return False
+        # return jsonify({'message': 'Socio no encontrado.'}), 404
 
 
 # -------------------------------------------------------------------
@@ -262,7 +265,7 @@ def obtener_socio(dni):
     return jsonify({'message': 'Socio no encontrado.'}), 404
 
 # Ruta para obtener la lista de socios dados de alta
-@app.route('/socios', methods=['GET'])
+@app.route('/lista_socios', methods=['GET'])
 def obtener_socios():
     return administracion.listar_socios()
 
@@ -285,9 +288,7 @@ def modificar_socio(dni):
     return administracion.actualizar_socio(dni, nuevo_nombreyapellido, nuevo_sexo, nuevo_fechanacimiento)
 
 # Ruta para dar de baja un socio
-@app.route('/socios/<int:dni>', methods=['DELETE'])
-def dar_baja_socio(dni):
-    return administracion.dar_baja_socio(dni)
+
 
 # Ruta para agregar inscribir un socio a un deporte
 @app.route('/inscripciones', methods=['POST'])
@@ -314,6 +315,8 @@ def obtener_inscripciones():
 # def obtener_socios():
 #     return administracion.listar_socios()
 
+
+#CREAR SOCIOS
 @app.route('/crear_socio', methods=["GET", "POST"])
 def formulario_socio():
     form = FormularioInscripcion()
@@ -321,16 +324,37 @@ def formulario_socio():
         if form.validate_on_submit():
             dni = form.dni.data
             nombreyapellido = form.nombreyapellido.data
+            email = form.email.data
             sexo = form.sexo.data
             fechanacimiento = form.fechanacimiento.data
-            print(dni, nombreyapellido, sexo, fechanacimiento)
-            # administracion.dar_alta_socio(dni, nombreyapellido, sexo, fechanacimiento)
+            edad = form.edad.data
+            telefono = form.telefono.data
+            print(dni, nombreyapellido, email, sexo, fechanacimiento, edad, telefono)
+            administracion.dar_alta_socio(dni, nombreyapellido, sexo, fechanacimiento)
             return redirect(url_for("formulario_exitoso"))
     return render_template("formulario.html", form=form)
 
 @app.route('/formulario_exitoso', methods=["GET", "POST"])
 def formulario_exitoso():
     return render_template("formulario_exitoso.html")
+#-------------------------
+
+#BORRAR SOCIO
+@app.route('/borrar_socio', methods=["GET", "POST"])
+def borrar_socio():
+    mensaje= ''
+    if request.method == "POST":
+        dni = request.form.get('dni')
+        print(dni)
+        if administracion.dar_baja_socio(dni):
+            return redirect(url_for("borrado_exitoso"))
+        mensaje = "Socio no encontrado, prueba con otro DNI."
+    return render_template("borrar_socio.html", mensaje=mensaje)
+
+@app.route('/borrado_exitoso', methods=["GET", "POST"])
+def borrado_exitoso():
+    return render_template("borrado_exitoso.html")
+#----------------------------
 
 # Finalmente, si estamos ejecutando este archivo, lanzamos app.
 if __name__ == '__main__':
