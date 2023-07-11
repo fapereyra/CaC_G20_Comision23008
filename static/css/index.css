@@ -112,3 +112,7 @@ h2{
 .msj_error{
     background-color: #F9DBBB;
 }
+
+a {
+    text-decoration: none;
+}

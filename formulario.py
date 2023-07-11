@@ -11,4 +11,4 @@ class FormularioInscripcion(FlaskForm):
     fechanacimiento = DateField('Fecha de Nacimiento:', validators =[InputRequired()])
     edad = IntegerField('Edad:', validators=[InputRequired(),NumberRange(min=1, max=110, message='Introduce una edad valida') ])
     telefono = TelField('Telefono', validators=[InputRequired()], description='Introduce correctamente, Ej: 1138383833') 
-    submit = SubmitField('Enviar')
+    submit = SubmitField('Agregar')

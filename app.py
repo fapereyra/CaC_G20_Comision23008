@@ -5,6 +5,7 @@ from formulario import FormularioInscripcion
 from flask_bootstrap import Bootstrap4
 from tablas import create_database
 from objetos import InscripcionADeporte, AdministracionDeSocios
+from datetime import datetime
 
 #Crear la base de datos si no existe
 create_database()
@@ -120,15 +121,26 @@ def formulario_socio():
             tel = form.telefono.data
             direccylocalidad = "CABA"
             administracion.dar_alta_socio(dni, nomyape, sexo, categoria, email, tel, direccylocalidad)
-            return redirect(url_for("formulario_exitoso"))
+            return redirect(url_for("accion_exitosa", metodo='agregar'))
     return render_template("formulario.html", form=form)
 
-@app.route('/formulario_exitoso', methods=["GET", "POST"])
-def formulario_exitoso():
-    return render_template("formulario_exitoso.html")
+@app.route('/accion_exitosa/<string:metodo>', methods=["GET", "POST"])
+def accion_exitosa(metodo):
+    accion_realizada = metodo
+    print(accion_realizada)
+    if accion_realizada == 'agregar':
+        accion = 'agregado'
+        simbolo = '➕'
+    elif accion_realizada == 'modificar':
+        accion = 'modificado'
+        simbolo = '✏️'
+    else:
+        accion = 'borrado'
+        simbolo = '❌'
+    return render_template("formulario_exitoso.html", accion=accion, metodo=metodo, simbolo=simbolo)
 #-------------------------
 
-#BORRAR SOCIO
+#BORRAR SOCIO --------------------------------------
 @app.route('/borrar_socio', methods=["GET", "POST"])
 def borrar_socio():
     mensaje= ''
@@ -136,14 +148,49 @@ def borrar_socio():
         dni = request.form.get('dni')
         print(dni)
         if administracion.dar_baja_socio(dni):
-            return redirect(url_for("borrado_exitoso"))
+            return redirect(url_for("accion_exitosa", metodo='borrar'))
         mensaje = "Socio no encontrado, prueba con otro DNI."
     return render_template("borrar_socio.html", mensaje=mensaje)
 
-@app.route('/borrado_exitoso', methods=["GET", "POST"])
-def borrado_exitoso():
-    return render_template("borrado_exitoso.html")
+#Modificar Socio -----------------------------------
+@app.route('/modificar_socio', methods=["GET", "POST"])
+def modificacion_socio():
+    mensaje= ''
+    if request.method == "POST":
+        dni = request.form.get('dni')
+        if administracion.consultar_socio(dni) != None:
+            return redirect(url_for("modificar_socio_dni", dni=dni))
+        mensaje = "Socio no encontrado, prueba con otro DNI."
+    return render_template("modificar_socio.html", mensaje=mensaje)
 #----------------------------
+@app.route('/modificar_socio/<int:dni>', methods=["GET", "POST"])
+def modificar_socio_dni(dni):
+    socio = administracion.consultar_socio(dni)
+    print(socio)
+    form = FormularioInscripcion(dni= dni, 
+                                nombreyapellido=socio.nomyape, 
+                                sexo= socio.sexo,
+                                fechanacimiento= datetime(1993,8,12),
+                                email= socio.email,
+                                tel= 1138588855,
+                                direccylocalidad= socio.direccylocalidad
+    )
+    if request.method == "POST":
+        if form.validate_on_submit():
+            dni = form.dni.data
+            nomyape = form.nombreyapellido.data
+            email = form.email.data
+            sexo = form.sexo.data
+            categoria = 1
+            fechanacimiento = form.fechanacimiento.data
+            edad = form.edad.data
+            tel = form.telefono.data
+            direccylocalidad = "CABA"
+            administracion.actualizar_socio(dni, nomyape, sexo, categoria, email, tel, direccylocalidad)
+            print("actualizacion exitosa")
+            return redirect(url_for("accion_exitosa", metodo='modificar'))
+    return render_template("formulario.html", form=form)
+
 
 # Finalmente, si estamos ejecutando este archivo, lanzamos app.
 if __name__ == '__main__':

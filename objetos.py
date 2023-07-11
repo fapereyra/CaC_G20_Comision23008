@@ -82,8 +82,10 @@ class AdministracionDeSocios:
             self.cursor.execute("UPDATE socios SET nomyape = ?, sexo = ?, categoria = ?, email = ?, tel = ?, direccylocalidad = ? WHERE dni = ?",
                                 (nomyape, sexo, categoria, email, tel, direccylocalidad, dni))
             self.conexion.commit()
-            return jsonify({'message': 'Socio modificado correctamente.'}), 200
-        return jsonify({'message': 'Socio no encontrado.'}), 404
+            return True
+            # return jsonify({'message': 'Socio modificado correctamente.'}), 200
+        return False
+        # return jsonify({'message': 'Socio no encontrado.'}), 404
 
     def listar_socios(self):
         self.cursor.execute("SELECT * FROM socios")
