@@ -54,9 +54,20 @@
                               <li><a class="dropdown-item" href="{{url_for('borrar_socio')}}">Eliminar socio</a></li>
                             </ul>
                           </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="{{url_for('deportes')}}">Deportes</a>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Deportes
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <li><a class="dropdown-item" href="{{url_for('deportes')}}">Ver Deportes</a></li>
+                              <li><a class="dropdown-item" href="{{url_for('agregar_inscripcion')}}">Inscribir a deporte</a></li>
+                              <li><a class="dropdown-item" href="{{url_for('obtener_inscripciones')}}">Ver inscripciones</a></li>
+                              <li><a class="dropdown-item" href="{{url_for('quitar_inscripcion')}}">Eliminar inscripcion</a></li>
+                            </ul>
                           </li>
+                          <!-- <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('deportes')}}">Deportes</a>
+                          </li>  -->
                           <li class="nav-item">
                             <a class="nav-link" href="{{url_for('institucional')}}">Institucional</a>
                           </li>

@@ -32,7 +32,7 @@ function accionBotones(e) {
             horaPractD.innerHTML = `Lunes y Miércoles 10:00hs <br> Martes y Jueves 19:00hs`
 
             contenidoD.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a libero elit. Sed dapibus pellentesque risus, vel finibus libero facilisis id. Curabitur vestibulum finibus feugiat. Quisque laoreet scelerisque nibh a elementum. Pellentesque iaculis urna eget dolor dignissim sagittis vitae vitae ligula. Curabitur non libero eros. Donec eu cursus urna. Suspendisse ac risus quis justo condimentum interdum. Integer et arcu risus. Suspendisse commodo purus blandit leo laoreet porta. Aenean euismod eu erat sit amet sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum dapibus diam eu mauris mollis cursus. Nunc et libero libero. Etiam eu orci rhoncus, dignissim.`;
-            imagenD.innerHTML = `<img src="./img/atletismoM.jpg" alt="" width="30%" >`
+            imagenD.innerHTML = "<img src={{url_for('static', filename='img/atletismoM.jpg')}} alt='' width='30%' >"
             break;
 
         case "btnFutbol":
@@ -46,7 +46,7 @@ function accionBotones(e) {
             horaPractD.innerHTML = `Lunes y Miércoles 10:00hs <br> Martes y Jueves 19:00hs`
 
             contenidoD.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a libero elit. Sed dapibus pellentesque risus, vel finibus libero facilisis id. Curabitur vestibulum finibus feugiat. Quisque laoreet scelerisque nibh a elementum. Pellentesque iaculis urna eget dolor dignissim sagittis vitae vitae ligula. Curabitur non libero eros. Donec eu cursus urna. Suspendisse ac risus quis justo condimentum interdum. Integer et arcu risus. Suspendisse commodo purus blandit leo laoreet porta. Aenean euismod eu erat sit amet sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum dapibus diam eu mauris mollis cursus. Nunc et libero libero. Etiam eu orci rhoncus, dignissim.`;
-            imagenD.innerHTML = `<img src="./img/futbol.jpg" alt="" width="30%" >`
+            imagenD.innerHTML = `<img src={{url_for("static", filename="img/futbol.jpg")}} alt="" width="30%" >`
             break;
         case "btnHockey":
             // Muestra y visualiza secciones
@@ -54,12 +54,12 @@ function accionBotones(e) {
             document.getElementById("textoDeportes").style.display = "";
 
             //Modifica Elementos del formulario
-            iconoD.innerHTML = `<img class="ancho-img" src="./img/hockey-iconNegro.png"><br>`;
+            iconoD.innerHTML = `<img class="ancho-img" src={{url_for("static", filename="img/hockey-icon.png")}}><br>`;
             nombreD.innerHTML = "Hockey";
             horaPractD.innerHTML = `Lunes y Miércoles 10:00hs <br> Martes y Jueves 19:00hs`
 
             contenidoD.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a libero elit. Sed dapibus pellentesque risus, vel finibus libero facilisis id. Curabitur vestibulum finibus feugiat. Quisque laoreet scelerisque nibh a elementum. Pellentesque iaculis urna eget dolor dignissim sagittis vitae vitae ligula. Curabitur non libero eros. Donec eu cursus urna. Suspendisse ac risus quis justo condimentum interdum. Integer et arcu risus. Suspendisse commodo purus blandit leo laoreet porta. Aenean euismod eu erat sit amet sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum dapibus diam eu mauris mollis cursus. Nunc et libero libero. Etiam eu orci rhoncus, dignissim.`;
-            imagenD.innerHTML = `<img src="./img/hockey.jpg" alt="" width="30%" >`
+            imagenD.innerHTML = `<img src={{url_for("static", filename="img/hockey.jpg")}} alt="" width="30%" >`
             break;
 
 
@@ -74,7 +74,7 @@ function accionBotones(e) {
             horaPractD.innerHTML = `Lunes y Miércoles 10:00hs <br> Martes y Jueves 19:00hs`
 
             contenidoD.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a libero elit. Sed dapibus pellentesque risus, vel finibus libero facilisis id. Curabitur vestibulum finibus feugiat. Quisque laoreet scelerisque nibh a elementum. Pellentesque iaculis urna eget dolor dignissim sagittis vitae vitae ligula. Curabitur non libero eros. Donec eu cursus urna. Suspendisse ac risus quis justo condimentum interdum. Integer et arcu risus. Suspendisse commodo purus blandit leo laoreet porta. Aenean euismod eu erat sit amet sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum dapibus diam eu mauris mollis cursus. Nunc et libero libero. Etiam eu orci rhoncus, dignissim.`;
-            imagenD.innerHTML = `<img src="./img/basketball.jpg" alt="" width="30%" >`
+            imagenD.innerHTML = `<img src={{url_for("static", filename="img/basketball.jpg")}} alt="" width="30%" >`
             break;
         case "btnArtesMarciales":
             // Muestra y visualiza secciones
@@ -87,7 +87,7 @@ function accionBotones(e) {
             horaPractD.innerHTML = `Lunes y Miércoles 10:00hs <br> Martes y Jueves 19:00hs`
 
             contenidoD.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a libero elit. Sed dapibus pellentesque risus, vel finibus libero facilisis id. Curabitur vestibulum finibus feugiat. Quisque laoreet scelerisque nibh a elementum. Pellentesque iaculis urna eget dolor dignissim sagittis vitae vitae ligula. Curabitur non libero eros. Donec eu cursus urna. Suspendisse ac risus quis justo condimentum interdum. Integer et arcu risus. Suspendisse commodo purus blandit leo laoreet porta. Aenean euismod eu erat sit amet sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum dapibus diam eu mauris mollis cursus. Nunc et libero libero. Etiam eu orci rhoncus, dignissim.`;
-            imagenD.innerHTML = `<img src="./img/artesMarciales.jpg" alt="" width="30%" >`
+            imagenD.innerHTML = `<img src="../img/artesMarciales.jpg" alt="" width="30%" >`
             break;
         case "btnPingPong":
             // Muestra y visualiza secciones

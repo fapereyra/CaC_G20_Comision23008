@@ -125,14 +125,14 @@ class InscripcionADeporte:
             return Inscripcion(dni_socio, id_d)
         return None
 
-    def inscribir(self, dni, id_d, id):
+    def inscribir(self, dni, id_d):
         socio = AdministracionDeSocios.consultar_socio(dni)
         if socio is None:
             return jsonify({'message': 'El socio no existe.'}), 404
 
-        inscripcion = InscripcionADeporte.consultar_inscripcion(id, dni, id_d)
+        inscripcion = InscripcionADeporte.consultar_inscripcion(dni, id_d)
         if inscripcion is None:
-            self.cursor.execute("INSERT INTO inscripciones VALUES (?, ?, ?)", (id, dni, id_d))
+            self.cursor.execute("INSERT INTO inscripciones VALUES (?, ?)", (dni, id_d))
             self.conexion.commit()
             return jsonify({'message': 'Socio inscripto correctamente.'}), 200
         return jsonify({'message': 'El socio ya se encuentra inscripto en este deporte'}), 404

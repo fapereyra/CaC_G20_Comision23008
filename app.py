@@ -69,23 +69,27 @@ def obtener_socios():
 #     return administracion.dar_alta_socio(dni, nombreyapellido, sexo, fechanacimiento)
 
 # Ruta para modificar la informacion de un socio -- CREO QUE ESTO QUEDARÍA SIN EFECTO --
-@app.route('/socios/<int:codigo>', methods=['PUT'])
-def modificar_socio(dni):
-    nuevo_nombreyapellido = request.json.get('nombreyapellido')
-    nuevo_sexo = request.json.get('sexo')
-    nuevo_fechanacimiento = request.json.get('fechanacimiento')
-    return administracion.actualizar_socio(dni, nuevo_nombreyapellido, nuevo_sexo, nuevo_fechanacimiento)
+# @app.route('/socios/<int:codigo>', methods=['PUT'])
+# def modificar_socio(dni):
+#     nuevo_nombreyapellido = request.json.get('nombreyapellido')
+#     nuevo_sexo = request.json.get('sexo')
+#     nuevo_fechanacimiento = request.json.get('fechanacimiento')
+#     return administracion.actualizar_socio(dni, nuevo_nombreyapellido, nuevo_sexo, nuevo_fechanacimiento)
 
 # Ruta para dar de baja un socio
 
 
 # Ruta para agregar inscribir un socio a un deporte
-@app.route('/inscripciones', methods=['POST'])
+@app.route('/inscribir_deporte', methods=['GET','POST'])
 def agregar_inscripcion():
-    id = request.json.get('id')
-    dni_socio = request.json.get('dni_socio')
-    id_d = request.json.get('id_d')
-    return inscripcion.inscribir(dni_socio, id_d, id)
+    if request.method == 'POST':
+        dni = request.form.get('dni')
+        id_d = request.form.get('sports')
+        print(dni, id_d, type(request.form))
+        inscripcion.inscribir(dni, id_d)
+        print('Inscripcion exitosaaaaaaaaaaaaaaaa')
+        return redirect(url_for("accion_exitosa", metodo='inscripccion'))
+    return render_template('inscribir_deporte.html')
 
 # Ruta para dar de baja un socio de un deporte
 @app.route('/inscripciones', methods=['DELETE'])
@@ -95,7 +99,7 @@ def quitar_inscripcion():
     return inscripcion.desinscribir(dni_socio, id_d)
 
 # Ruta para obtener el contenido de las incripciones
-@app.route('/inscripciones', methods=['GET'])
+@app.route('/ver_inscripciones', methods=['GET'])
 def obtener_inscripciones():
     return inscripcion.mostrar()
 
