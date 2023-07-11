@@ -96,7 +96,7 @@ class AdministracionDeSocios:
         return jsonify(socios), 200
 
     def dar_baja_socio(self, dni):
-        InscripcionADeporte.desincribir_todos_los_deportes(dni)
+        # InscripcionADeporte.desincribir_todos_los_deportes(dni)
 
         self.cursor.execute("DELETE FROM socios WHERE dni = ?", (dni,))
         if self.cursor.rowcount > 0:
